@@ -1,0 +1,314 @@
+<?xml version="1.0" ?>
+<robot name="dofbot">
+  <link name="base_link">
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/base_link.STL" />
+          </geometry>
+          <material name="">
+              <color rgba="0.592156862745098 0.666666666666667 0.682352941176471 1" />
+          </material>
+      </visual>
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/base_link.STL" />
+          </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1"/>
+        <inertia ixx="0.00003489" ixy="0.0" ixz="0.0" iyy="0.00003489" iyz="0.0" izz="0.00003936"/>
+      </inertial>
+  </link>
+  <link name="link1">
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link1.STL" />
+          </geometry>
+          <material name="">
+              <color rgba="0 0.627450980392157 0.235294117647059 1" />
+          </material>
+      </visual>
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link1.STL" />
+          </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.01"/>
+        <inertia ixx="0.000025" ixy="0.0" ixz="0.0" iyy="0.000025" iyz="0.0" izz="0.000025"/>
+      </inertial>
+  </link>
+  <joint name="joint1" type="revolute">
+      <origin xyz="0 0 0.06605" rpy="-0.010805 0 0" />
+      <parent link="base_link" />
+      <child link="link1" />
+      <axis xyz="0 0 1" />
+      <limit effort="30" velocity="1000.0" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <link name="link2">
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link2.STL" />
+          </geometry>
+          <material name="">
+              <color rgba="0.592156862745098 0.666666666666667 0.682352941176471 1" />
+          </material>
+      </visual>
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link2.STL" />
+          </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.032"/>
+        <inertia ixx="0.000006573" ixy="0.0" ixz="0.0" iyy="0.00000843" iyz="0.0" izz="0.000004677"/>
+      </inertial>
+  </link>
+  <joint name="joint2" type="revolute">
+      <origin xyz="0 -0.00031873 0.04145" rpy="0 1.5708 0" />
+      <parent link="link1" />
+      <child link="link2" />
+      <axis xyz="0 0 1" />
+      <limit effort="30" velocity="1000.0" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <link name="link3">
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link3.STL" />
+          </geometry>
+          <material name="">
+              <color rgba="0 0.627450980392157 0.235294117647059 1" />
+          </material>
+      </visual>
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link3.STL" />
+          </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.032"/>
+        <inertia ixx="0.000006573" ixy="0.0" ixz="0.0" iyy="0.00000843" iyz="0.0" izz="0.000004677"/>
+      </inertial>
+  </link>
+  <joint name="joint3" type="revolute">
+      <origin xyz="-0.08285 0 0" rpy="0 0 0" />
+      <parent link="link2" />
+      <child link="link3" />
+      <axis xyz="0 0 1" />
+      <limit effort="30" velocity="1000.0" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <link name="link4">
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link4.STL" />
+          </geometry>
+          <material name="">
+              <color rgba="0.592156862745098 0.666666666666667 0.682352941176471 1" />
+          </material>
+      </visual>
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link4.STL" />
+          </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.064"/>
+        <inertia ixx="0.000036955" ixy="0.0" ixz="0.0" iyy="0.00004067" iyz="0.0" izz="0.000009355"/>
+      </inertial>
+  </link>
+  <joint name="joint4" type="revolute">
+      <origin xyz="-0.08285 0 0" rpy="0 0 0.0083081" />
+      <parent link="link3" />
+      <child link="link4" />
+      <axis xyz="0 0 1" />
+      <limit effort="30" velocity="1000.0" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- link5 -->
+  <link name="link5">
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link5.STL"/>
+          </geometry>
+          <material name="">
+              <color rgba="1 1 1 1" />
+          </material>
+      </visual>
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <mesh filename="file:///home/hj69411/Documents/Dofbot/dofbot_moveit/meshes/link5.STL" />
+          </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.02"/>
+        <inertia ixx="0.000003468" ixy="0.0" ixz="0.0" iyy="0.000003414" iyz="0.0" izz="0.000005549"/>
+      </inertial>
+  </link>
+  <!-- joint5 -->
+  <joint name="joint5" type="revolute">
+      <origin xyz="-0.07385 -0.001 0" rpy="0 -1.57 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="link4"/>
+      <child link="link5"/>
+      <limit effort="30" velocity="1000.0" lower="-1.5708" upper="3.1416"/>
+  </joint>
+  <!-- Camera joint https://automaticaddison.com/how-to-add-a-depth-camera-to-an-sdf-file-for-gazebo/-->
+  <joint name="camera_joint" type="fixed">
+      <axis xyz="0 1 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="link4"/>
+      <child link="camera_link"/>
+  </joint>
+
+
+  <!-- Camera link -->
+  <link name="camera_link">
+      <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+              <box size="0.015 0.08 0.022"/>
+          </geometry>
+      </collision>
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+              <box size="0.015 0.08 0.022"/>
+          </geometry>
+          <material name="red">
+              <color rgba="1 0 0 0" />
+          </material>
+      </visual>
+      <inertial>
+          <mass value="1e-5" />
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+      </inertial>
+  </link>
+
+
+  <!-- Gazebo plugin for camera -->
+   <!-- camera -->
+ <gazebo reference="camera_link">
+   <sensor type="camera" name="camera1">
+     <update_rate>30.0</update_rate>
+     <camera name="head">
+       <horizontal_fov>1.3962634</horizontal_fov>
+       <image>
+         <width>800</width>
+         <height>800</height>
+         <format>R8G8B8</format>
+       </image>
+       <clip>
+         <near>0.02</near>
+         <far>300</far>
+       </clip>
+       <noise>
+         <type>gaussian</type>
+         <!-- Noise is sampled independently per pixel on each frame.
+              That pixel's noise value is added to each of its color
+              channels, which at that point lie in the range [0,1]. -->
+         <mean>0.0</mean>
+         <stddev>0.007</stddev>
+       </noise>
+     </camera>
+     <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+       <alwaysOn>true</alwaysOn>
+       <updateRate>0.0</updateRate>
+       <cameraName>rrbot/camera1</cameraName>
+       <imageTopicName>image_raw</imageTopicName>
+       <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+       <frameName>camera_link</frameName>
+       <hackBaseline>0.07</hackBaseline>
+       <distortionK1>0.0</distortionK1>
+       <distortionK2>0.0</distortionK2>
+       <distortionK3>0.0</distortionK3>
+       <distortionT1>0.0</distortionT1>
+       <distortionT2>0.0</distortionT2>
+     </plugin>
+   </sensor>
+ </gazebo>
+ <!-- Gazebo plugins for controlling and publishing joint states -->
+ <gazebo>
+   <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+     <robotNamespace>/</robotNamespace>
+     <updateRate>100.0</updateRate>
+     <commandTopic>joint_trajectory</commandTopic>
+     <robotParam>robot_description</robotParam>
+       <joint_name>joint1</joint_name>
+       <joint_name>joint2</joint_name>
+       <joint_name>joint3</joint_name>
+       <joint_name>joint4</joint_name>
+       <joint_name>joint5</joint_name>
+       <joint_name>camera_joint</joint_name>
+   <update_rate>100</update_rate>
+     <stopOnError>false</stopOnError>
+   </plugin>
+ </gazebo>
+
+
+ <gazebo>
+   <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+     <robotNamespace>/</robotNamespace>
+     <updateRate>100.0</updateRate>
+       <joint_name>joint1</joint_name>
+       <joint_name>joint2</joint_name>
+       <joint_name>joint3</joint_name>
+       <joint_name>joint4</joint_name>
+       <joint_name>joint5</joint_name>
+       <joint_name>camera_joint</joint_name>
+   <update_rate>100</update_rate>
+   </plugin>
+ </gazebo>
+
+
+</robot>
+
+
+
+
+
+
+
+<origin xyz="-0.07385 -0.031000 -0.010000" rpy="-0.001589 3.140000 3.141590"/>
+Amendments Chat 
+
+
+<gazebo>
+  <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+    <robotNamespace>/</robotNamespace>
+    <updateRate>100.0</updateRate>
+    <commandTopic>joint_trajectory</commandTopic>
+    <robotParam>robot_description</robotParam>
+    <joint_name>joint1</joint_name>
+    <joint_name>joint2</joint_name>
+    <joint_name>joint3</joint_name>
+    <joint_name>joint4</joint_name>
+    <joint_name>joint5</joint_name>
+    <stopOnError>false</stopOnError>
+  </plugin>
+</gazebo>
+
+
+<gazebo>
+  <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+    <robotNamespace>/</robotNamespace>
+    <updateRate>100.0</updateRate>
+    <joint_name>joint1</joint_name>
+    <joint_name>joint2</joint_name>
+    <joint_name>joint3</joint_name>
+    <joint_name>joint4</joint_name>
+    <joint_name>joint5</joint_name>
+    <joint_name>camera_joint</joint_name>
+  </plugin>
+</gazebo>
